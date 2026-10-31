@@ -1,3 +1,29 @@
+# Ilocos Sur Budget Transparency Portal
+
+An independent civic portal for the Province of Ilocos Sur, forked from [BetterGov.ph’s transparency portal](https://github.com/bettergovph/transparency-portal). This is not an official provincial government website.
+
+## Ilocos Sur scope
+
+- Ilocos Sur 1st and 2nd District Engineering Offices, using their exact published API labels.
+- Projects whose titles name Ilocos Sur, scoped to Region I where the API supplies a region.
+- Both legislative districts: `leg:ilocos-sur:1st` and `leg:ilocos-sur:2nd`.
+- FY2027 NEP and House Bill 10858 comparisons, plus enacted budgets for 2020–2026.
+
+Data is fetched live from the public BetterGov.ph Budget API. Figures are never invented or combined across budget versions. Reporting remains disabled until the central reporting service opens.
+
+## Develop
+
+```sh
+npm ci
+npm run check
+npm run dev
+npm run build
+```
+
+`portal.config.ts` defines the scope and site identity. Builds produce `dist/`; serve unknown paths with `index.html` for client-side routes. The GitHub fork is https://github.com/torranx/transparency-portal. The hosted Sites copy starts private.
+
+## Upstream documentation
+
 # Transparency Portal
 
 A small, forkable website that shows citizens **every FY 2027 budget project** for one

@@ -18,7 +18,7 @@ export function Masthead() {
   const { config, client } = usePortal();
   const { pathname, hash } = useLocation();
   const today = useMemo(
-    () => new Date().toLocaleDateString('en-PH', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }),
+    () => new Date().toLocaleDateString('en-PH', { timeZone: 'Asia/Manila', weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }),
     [],
   );
   return (
@@ -54,7 +54,7 @@ export function Masthead() {
           {config.logo && <img src={config.logo} alt="" className="masthead-logo" />}
           <span>
             <span className="masthead-kicker">
-              {KIND_LABELS[config.kind]} <span aria-hidden="true">·</span> Budgets 2020–2027
+              {KIND_LABELS[config.kind]} <span aria-hidden="true">·</span> Budget transparency
             </span>
             <span className="masthead-name">{config.name}</span>
           </span>
@@ -94,6 +94,7 @@ export function Footer() {
   return (
     <footer className="footer">
       <div className="page footer-inner">
+        <p className="footer-notice">An independent civic initiative for Ilocos Sur. Not an official provincial government website.</p>
         <p className="footer-source">
           Source: NEP FY 2027 and House Bill 10858 · via the BetterGov.ph Budget API
           {meta && <> · data built {date(meta.built_at)}</>}
